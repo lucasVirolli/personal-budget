@@ -196,22 +196,26 @@ function loadExpenseList(expenses = [], filter = false) {
     row.insertCell(3).innerHTML = expen.value;
 
     //delete button
-    let deleteBtn = document.createElement('button')
+    const deleteBtn = document.createElement('button');
+    row.insertCell(4).append(deleteBtn);
     deleteBtn.className = 'btn btn-danger';
     deleteBtn.innerHTML = '<i class="fas fa-times"></i>'
     deleteBtn.id = expen.id
-    deleteBtn.onclick = function(){
+
+    const tdDeleteBtn = deleteBtn.parentNode
+    tdDeleteBtn.style.width = '2px'
+
+    deleteBtn.onclick = function () {
       //remove an expense
       const response = confirm(`Deseja realmente excluir a despesa ${expen.description} do dia ${expen.day}/${expen.month}/${expen.year} da tipo ${expen.description} com valor de ${expen.value}?`);
 
-      if(response){
+      if (response) {
         let id = expen.id;
         db.removeMethod(id);
-  
+
         window.location.reload()
-      }      
+      }
     }
-    row.insertCell(4).append(deleteBtn);
   });
 }
 
