@@ -22,7 +22,7 @@ It's a simple personal budget that I've learned in a JavaScript class.
 <h3>Look it working:</h3> 
 </br>
   <h1>
-    <img src="./assets/lucas-clone-soptify.gif" />
+    <img src="./assets/lucas-orcamento-pessoal.gif" />
   </h1>
 
 ### But what I could learn and put in practice here?
